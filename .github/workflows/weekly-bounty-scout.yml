@@ -22,7 +22,7 @@ jobs:
       - name: Scan GitHub for paid bounties
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python -m bounty_scout.scout --min-amount 10 --top 20 --output report.md
+        run: python -m bounty_scout.scout --min-amount 10 --min-stars 500 --top 20 --output report.md
       - name: Publish report as an issue
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
