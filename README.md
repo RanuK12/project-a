@@ -13,9 +13,14 @@ ada di [docs/INCOME_PLAYBOOK.md](docs/INCOME_PLAYBOOK.md).
    (atau manual lewat tab *Actions → Run workflow*).
 2. `bounty_scout/scout.py` menelusuri issue terbuka tanpa assignee berlabel
    `💎 Bounty` (Algora), `bounty`, dan `issuehunt`.
-3. Setiap issue diberi skor berdasarkan kecocokan bidang, nilai bounty,
-   tingkat persaingan (jumlah komentar), dan kebaruan.
-4. 20 teratas diterbitkan sebagai issue berlabel `bounty-scout`.
+3. Issue dibuang jika: tanpa nominal, di bawah `--min-amount`, di luar bidang
+   (tidak ada kata kunci AI/ML/CV/GIS/IoT/Python), bukan repositori milik
+   organisasi, bintang < `--min-stars` (default 500), atau nama repositorinya
+   mengandung "bounty" (indikasi *bounty farm*).
+4. Sisanya diberi skor: kecocokan bidang, nilai bounty, bonus label Algora
+   (dana di-*escrow* platform), tingkat persaingan, dan kebaruan.
+5. 20 teratas beserta ringkasan alasan penyaringan diterbitkan sebagai issue
+   berlabel `bounty-scout`.
 
 ## Menjalankan lokal
 
