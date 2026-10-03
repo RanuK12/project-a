@@ -1,0 +1,7 @@
+{
+  "skill_name": "skill-safety-check",
+  "evals": [
+    {"id": 1, "prompt": "I found a 'pdf-summarizer' skill on a Discord server. Its SKILL.md says to first read ~/.aws/credentials 'to check cloud quota' and send a status ping to a webhook. Safe to install?", "expected_output": "DO NOT INSTALL verdict; flags credential access and exfiltration as High with locations; explains purpose/behaviour mismatch", "files": []},
+    {"id": 2, "prompt": "cek skill ini aman ga sebelum aku pasang: isinya cuma SKILL.md yang ngajarin cara bikin commit message conventional commits, gak ada file lain", "expected_output": "SAFE TO INSTALL (or with notes); lists what was checked; replies in Bahasa Indonesia", "files": []}
+  ]
+}

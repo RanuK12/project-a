@@ -1,0 +1,27 @@
+name: Skill Safety
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Scan public skills
+        run: python -m skill_store.scan skills/*
+      - name: Block paid skill content in the public repo
+        run: |
+          if git ls-files | grep -q '^paid-skills/'; then
+            echo "Paid skills must live in a private repository." && exit 1
+          fi
