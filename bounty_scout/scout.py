@@ -255,7 +255,7 @@ def render(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--min-amount", type=float, default=10)
-    parser.add_argument("--min-stars", type=int, default=500)
+    parser.add_argument("--min-stars", type=int, default=100)
     parser.add_argument("--top", type=int, default=20)
     parser.add_argument("--per-page", type=int, default=100)
     parser.add_argument("--output", default="-")
