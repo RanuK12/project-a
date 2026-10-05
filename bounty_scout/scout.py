@@ -44,6 +44,7 @@ KEYWORDS = {
     "gis": 3, "geospatial": 3, "gdal": 3, "raster": 2, "shapefile": 3,
     "iot": 3, "mqtt": 3, "sensor": 2, "embedded": 2, "autonomous": 3,
     "lidar": 3, "ros": 2, "python": 2, "numpy": 2, "pandas": 2, "jupyter": 2,
+    "automation": 2, "web-scraping": 2, "api": 2, "backend": 2,
 }
 
 # Signals that an issue is too large or outside the owner's expertise.
@@ -255,7 +256,7 @@ def render(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--min-amount", type=float, default=10)
-    parser.add_argument("--min-stars", type=int, default=500)
+    parser.add_argument("--min-stars", type=int, default=20)
     parser.add_argument("--top", type=int, default=20)
     parser.add_argument("--per-page", type=int, default=100)
     parser.add_argument("--output", default="-")
