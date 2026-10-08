@@ -1,0 +1,15 @@
+test_algora_bounty_ranks_higher (tests.test_scout.CollectTest.test_algora_bounty_ranks_higher) ... ok
+test_keeps_only_trusted_domain_bounties (tests.test_scout.CollectTest.test_keeps_only_trusted_domain_bounties) ... ok
+test_render_empty_and_dropped (tests.test_scout.CollectTest.test_render_empty_and_dropped) ... ok
+test_skips_pull_requests_and_duplicates (tests.test_scout.CollectTest.test_skips_pull_requests_and_duplicates) ... ok
+test_domain_match_and_penalty (tests.test_scout.FitTest.test_domain_match_and_penalty) ... ok
+test_whole_words_only (tests.test_scout.FitTest.test_whole_words_only) ... ok
+test_dollar_sign (tests.test_scout.ParseAmountTest.test_dollar_sign) ... ok
+test_none (tests.test_scout.ParseAmountTest.test_none) ... ok
+test_thousands_separators (tests.test_scout.ParseAmountTest.test_thousands_separators) ... ok
+test_usd_suffix_and_max (tests.test_scout.ParseAmountTest.test_usd_suffix_and_max) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.005s
+
+OK

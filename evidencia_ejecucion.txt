@@ -1,0 +1,23 @@
+# Bounty Scout — week of 2026-10-05
+
+Target: at least US$10/week. One merged bounty of US$50 covers ~5 weeks.
+
+| # | Score | Amount | Stars | Comments | Repository | Issue |
+|---|------:|-------:|------:|---------:|------------|-------|
+| 1 | 5.0 | $600 | 130 | 37 | `Spectral-Finance/lux` | [LLM Provider Abstraction Layer $600](https://github.com/Spectral-Finance/lux/issues/99) |
+
+## Filtered out
+
+- no stated amount: 92
+- bounty-farm repository: 50
+- outside expertise: 37
+- fewer than 20 stars: 10
+- below minimum amount: 9
+- not an organisation repo: 2
+
+## Before claiming
+- Read the repo's CONTRIBUTING and bounty rules; many ban low-effort or unreviewed AI-generated PRs.
+- Check nobody is already assigned or has an open PR (comment count is a proxy only).
+- Prefer 💎 Algora bounties: the payout is escrowed by the platform.
+- Comment to claim (e.g. `/attempt` on Algora) only when you can deliver within a week.
+- Payouts go to your own Algora/IssueHunt/Stripe account; declare the income for tax.
