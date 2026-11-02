@@ -35,6 +35,16 @@ QUERIES = [
     'label:"issuehunt" state:open is:issue no:assignee',
 ]
 
+# GitHub Topics to search for (repository-level topics that indicate bounty-friendly repos)
+TOPIC_QUERIES = [
+    'topic:bounty state:open is:issue no:assignee',
+    'topic:hacktoberfest state:open is:issue no:assignee',
+    'topic:"good-first-issue" state:open is:issue no:assignee',
+    'topic:"help-wanted" state:open is:issue no:assignee',
+    'topic:issuehunt state:open is:issue no:assignee',
+    'topic:algora state:open is:issue no:assignee',
+]
+
 # Domain keywords (matched as whole words). At least one must appear.
 KEYWORDS = {
     "machine learning": 3, "deep learning": 3, "computer vision": 3,
@@ -44,7 +54,6 @@ KEYWORDS = {
     "gis": 3, "geospatial": 3, "gdal": 3, "raster": 2, "shapefile": 3,
     "iot": 3, "mqtt": 3, "sensor": 2, "embedded": 2, "autonomous": 3,
     "lidar": 3, "ros": 2, "python": 2, "numpy": 2, "pandas": 2, "jupyter": 2,
-    "automation": 2, "web-scraping": 2, "api": 2, "backend": 2,
 }
 
 # Signals that an issue is too large or outside the owner's expertise.
@@ -256,7 +265,7 @@ def render(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--min-amount", type=float, default=10)
-    parser.add_argument("--min-stars", type=int, default=20)
+    parser.add_argument("--min-stars", type=int, default=500)
     parser.add_argument("--top", type=int, default=20)
     parser.add_argument("--per-page", type=int, default=100)
     parser.add_argument("--output", default="-")
@@ -265,7 +274,8 @@ def main(argv: list[str] | None = None) -> int:
     token = os.environ.get("GITHUB_TOKEN")
     items: list[dict] = []
     failed = 0
-    for i, query in enumerate(QUERIES):
+    all_queries = QUERIES + TOPIC_QUERIES
+    for i, query in enumerate(all_queries):
         if i:
             time.sleep(10)  # the search API allows few requests per minute
         try:
